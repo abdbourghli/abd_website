@@ -19,3 +19,20 @@ yarn-error.log*
 *.njsproj
 *.sln
 *.sw?
+
+node_modules
+dist
+src
+webapp
+npm-debug.log
+
+/src/assets/*
+
+# Local development
+*.env
+*.dev
+.DS_Store
+
+# Docker
+Dockerfile
+docker-compose.yml
