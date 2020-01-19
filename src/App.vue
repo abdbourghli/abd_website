@@ -278,6 +278,7 @@ export default {
       this.$refs['ver-bis'].style.height= '0%'
       this.$refs['ver-dev'].style.height= '100%'
       this.$refs['ver-des'].style.height= '0%'
+      
       this.expanded = true
       this.$router.push('/developer')
     },

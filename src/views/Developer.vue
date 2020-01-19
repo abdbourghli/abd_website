@@ -52,14 +52,25 @@
         </div>
         <div class="sep"></div>
         <div class="des-conainer">
+            <div class="des-block" :style="{width: dywidth}"><iframe :style=" {width: '100%', height: '100%'}" :src="`https://www.youtube.com/embed/cI7-7YpPfOc`" frameborder="0" allowfullscreen></iframe></div>
             <div class="des-block" :style="{width: dywidth}">
                 <div class="des-p">
                     <div class="des-title" style="color: rgb(255, 219, 45);">Boss Intro Game</div>
                     <div class="des-text">This is a 2D boss fight game, it might seem like a normal game but its made to be played by thousands for players at the same time by typing commands the chat of a live stream, the purpose of the game is to replace the typical intros by entertaining audiences before the live stream starts.</div>
                 </div>
             </div>
-            <div class="des-block" :style="{width: dywidth}"><iframe :style=" {width: '100%', height: '100%'}" :src="`https://www.youtube.com/embed/cI7-7YpPfOc`" frameborder="0" allowfullscreen></iframe></div>
         </div>
+        <div class="sep"></div>
+        <div class="des-conainer">
+            <div class="des-block" :style="{width: dywidth}">
+                <div class="des-p">
+                    <div class="des-title" style="color: rgb(255, 219, 45);">SwiftorLand.com</div>
+                    <div class="des-text">This is a custom made website that allows users to see and use their virtual loyalty points, It was made using Vue framework and Vuex for state management.</div>
+                </div>
+            </div>
+            <div class="des-block" :style="{width: dywidth}"><slide-show :imgsData="swiftorlandImgs"></slide-show></div>
+        </div>
+        <div class="sep"></div>
         <info-page :viewport='viewport'
         v-on:addTitleIndex="addTitleIndex" v-on:removeTitleIndex="removeTitleIndex" :titleOnDisplay="titleOnDisplay"></info-page>
     </div>
@@ -115,6 +126,15 @@ export default {
                     "aplus6.jpg",
                     "aplus7.jpg",
                     "aplus8.jpg"
+                ]
+            },
+            swiftorlandImgs:{
+                path:"dev-swiftorland/",
+                imgs:[
+                    "swiftorland1.jpg",
+                    "swiftorland2.jpg",
+                    "swiftorland3.jpg",
+                    "swiftorland4.jpg"
                 ]
             },
             titleOnDisplay: 9
