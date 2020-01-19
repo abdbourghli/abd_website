@@ -70,8 +70,8 @@
             <div class="tab-top" style="background-color: rgb(144, 16, 16);"></div>
           </div>
           <div ref="des-text-ver" class="tab-intro-ver">
-            <div class="tab-im" style="font-size: 3vh;"  @mouseenter="desExpandVer()" @click="desVerClick">I'm a</div>
-            <div class="tab-title" style="font-size: 4vh;" @mouseenter="desExpandVer()" @click="desVerClick">Graphic Designer</div>
+            <div class="tab-im" style="font-size: 5vw;"  @mouseenter="desExpandVer()" @click="desVerClick">I'm a</div>
+            <div class="tab-title" style="font-size: 7vw;" @mouseenter="desExpandVer()" @click="desVerClick">Graphic Designer</div>
             
           </div>
           <img ref="des-char-ver"  @mouseenter="desExpandVer()" @click="desVerClick" class="char-img-ver" src="./assets/des-char.png" alt="">
@@ -81,8 +81,8 @@
             <div class="tab-top" style="background-color: rgb(7, 27, 41);"></div>
           </div>
           <div ref="bis-text-ver" class="tab-intro-ver">
-            <div class="tab-im" style="color: #4885b1; font-size: 3vh;" @mouseenter="bisExpandVer()" @click="bisVerClick">I'm a</div>
-            <div class="tab-title" style="color: #4885b1; font-size: 4vh;" @mouseenter="bisExpandVer()" @click="bisVerClick">Business Student</div>
+            <div class="tab-im" style="color: #4885b1; font-size: 5vw;" @mouseenter="bisExpandVer()" @click="bisVerClick">I'm a</div>
+            <div class="tab-title" style="color: #4885b1; font-size: 7vw;" @mouseenter="bisExpandVer()" @click="bisVerClick">Business Student</div>
             
           </div>
           <img ref="des-char-ver" @mouseenter="bisExpandVer()" @click="bisVerClick" class="char-img-ver" src="./assets/bis-char.png" alt="">
@@ -92,8 +92,8 @@
             <div class="tab-top" style="background-color: rgb(35, 114, 156);"></div>
           </div>
           <div ref="dev-text" class="tab-intro-ver">
-            <div class="tab-im" style="color: rgb(22, 63, 84); font-size: 3vh;" @mouseenter="devExpandVer()" @click="devVerClick">I'm a</div>
-            <div class="tab-title" style="color: rgb(22, 63, 84); font-size: 4vh;" @mouseenter="devExpandVer()" @click="devVerClick">Programmer</div>
+            <div class="tab-im" style="color: rgb(22, 63, 84); font-size: 5vw;" @mouseenter="devExpandVer()" @click="devVerClick">I'm a</div>
+            <div class="tab-title" style="color: rgb(22, 63, 84); font-size: 7vw;" @mouseenter="devExpandVer()" @click="devVerClick">Programmer</div>
           </div>
           <img ref="des-char-ver" @mouseenter="devExpandVer()" @click="devVerClick" class="char-img-ver" src="./assets/dev-char.png" alt="">
         </div>
@@ -531,7 +531,7 @@ body{
 }
 .char-img-ver{
   position: absolute;
-  height: 80%;
+  width: 25%;
   transform: translate(-50%, -50%);
   top: 50%;
   left: 80%;
