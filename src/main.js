@@ -10,6 +10,10 @@ import imgScroller from './components/Img-Scroller'
 import imgList from './components/Img-List'
 import slideShow from './components/Slide-Show'
 import infoPage from './views/Info'
+import axios from 'axios'
+import VueAxios from 'vue-axios'
+
+Vue.use(VueAxios, axios)
 
 Vue.config.productionTip = false
 Vue.component('slow-scroll', slowScroll)

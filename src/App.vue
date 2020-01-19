@@ -23,11 +23,12 @@
       </div>
       <div class="img-circle">
         <transition name="fade">
-          <img v-if="expanded" key="arrow" style="width: 100%; cursor: pointer;" src="./assets/left-arrow.svg" alt="" @click="tabsReset(true)">
+          <img v-if="expanded" key="arrow" style="width: 100%; cursor: pointer;" src="./assets/left-arrow.svg" alt="" @click="tabsReset(true), tabsResetVer(true)">
           <div v-if="!expanded" key="profileImg" class="prof-img"><img style="width: 100%;" src="./assets/portrait.jpg" alt="" @click="tabsReset(true)"></div>
         </transition>
       </div>
-      <div class="tabs-cont" @mouseleave="tabsReset(false)">
+      <!-- PC -->
+      <div v-show="window.width*0.8>window.height" class="tabs-cont" @mouseleave="tabsReset(false)">
         <div class="des-tab" ref="des">
           <div class="tab-cont"  @mouseenter="desExpand()" @click="desClick" style="background-color: rgb(173, 24, 24);">
             <div class="tab-top" style="background-color: rgb(144, 16, 16);"></div>
@@ -44,8 +45,8 @@
             <div class="tab-top" style="background-color: rgb(7, 27, 41);"></div>
           </div>
           <div ref="bis-text" class="tab-intro" style="left: 69%;">
-            <div class="tab-im" @mouseenter="bisExpand()" @click="bisClick">I'm a</div>
-            <div class="tab-title" @mouseenter="bisExpand()" @click="bisClick">Business Student</div>
+            <div class="tab-im" style="color: #4885b1;" @mouseenter="bisExpand()" @click="bisClick">I'm a</div>
+            <div class="tab-title" style="color: #4885b1;" @mouseenter="bisExpand()" @click="bisClick">Business Student</div>
             
           </div>
           <img ref="bis-char" @mouseenter="bisExpand()" @click="bisClick" class="char-img" style="left: 66%; width: 38%;" src="./assets/bis-char.png" alt="">
@@ -55,11 +56,46 @@
             <div class="tab-top" style="background-color: rgb(35, 114, 156);"></div>
           </div>
           <div ref="dev-text" class="tab-intro" style="left: 50%;">
-            <div class="tab-im" @mouseenter="devExpand()" @click="devClick">I'm a</div>
-            <div class="tab-title" @mouseenter="devExpand()" @click="devClick">Programmer</div>
-            
+            <div class="tab-im" style="color: rgb(22, 63, 84);" @mouseenter="devExpand()" @click="devClick">I'm a</div>
+            <div class="tab-title" style="color: rgb(22, 63, 84);" @mouseenter="devExpand()" @click="devClick">Programmer</div>
           </div>
           <img ref="dev-char" @mouseenter="devExpand()" @click="devClick" class="char-img" style="left: 50%; width: 55%;" src="./assets/dev-char.png" alt="">
+        </div>
+        <img v-if="expanded" @click="scrollToRouter" class="down-arrow" src="./assets/down-arrow.svg" alt="down">
+      </div>
+      <!-- Mobile -->
+      <div v-show="window.width*0.8<window.height" class="tabs-cont" @mouseleave="tabsResetVer(false)">
+        <div class="des-tab-ver" ref="ver-des">
+          <div class="tab-cont"  @mouseenter="desExpandVer()" @click="desVerClick" style="background-color: rgb(173, 24, 24);">
+            <div class="tab-top" style="background-color: rgb(144, 16, 16);"></div>
+          </div>
+          <div ref="des-text-ver" class="tab-intro-ver">
+            <div class="tab-im" style="font-size: 3vh;"  @mouseenter="desExpandVer()" @click="desVerClick">I'm a</div>
+            <div class="tab-title" style="font-size: 4vh;" @mouseenter="desExpandVer()" @click="desVerClick">Graphic Designer</div>
+            
+          </div>
+          <img ref="des-char-ver"  @mouseenter="desExpandVer()" @click="desVerClick" class="char-img-ver" src="./assets/des-char.png" alt="">
+        </div>
+        <div class="bis-tab-ver" ref="ver-bis">
+          <div class="tab-cont" @mouseenter="bisExpandVer()" @click="bisVerClick" style="background-color: rgb(10, 38, 58);">
+            <div class="tab-top" style="background-color: rgb(7, 27, 41);"></div>
+          </div>
+          <div ref="bis-text-ver" class="tab-intro-ver">
+            <div class="tab-im" style="color: #4885b1; font-size: 3vh;" @mouseenter="bisExpandVer()" @click="bisVerClick">I'm a</div>
+            <div class="tab-title" style="color: #4885b1; font-size: 4vh;" @mouseenter="bisExpandVer()" @click="bisVerClick">Business Student</div>
+            
+          </div>
+          <img ref="des-char-ver" @mouseenter="bisExpandVer()" @click="bisVerClick" class="char-img-ver" src="./assets/bis-char.png" alt="">
+        </div>
+        <div class="dev-tab-ver" ref="ver-dev">
+          <div class="tab-cont"  @mouseenter="devExpandVer()" @click="devVerClick" style="background-color: rgb(47, 152, 208);">
+            <div class="tab-top" style="background-color: rgb(35, 114, 156);"></div>
+          </div>
+          <div ref="dev-text" class="tab-intro-ver">
+            <div class="tab-im" style="color: rgb(22, 63, 84); font-size: 3vh;" @mouseenter="devExpandVer()" @click="devVerClick">I'm a</div>
+            <div class="tab-title" style="color: rgb(22, 63, 84); font-size: 4vh;" @mouseenter="devExpandVer()" @click="devVerClick">Programmer</div>
+          </div>
+          <img ref="des-char-ver" @mouseenter="devExpandVer()" @click="devVerClick" class="char-img-ver" src="./assets/dev-char.png" alt="">
         </div>
         <img v-if="expanded" @click="scrollToRouter" class="down-arrow" src="./assets/down-arrow.svg" alt="down">
       </div>
@@ -146,6 +182,9 @@ export default {
         this.$refs['des'].style.width= '50%'
         this.$refs['bis'].style.width= '50%'
         this.$refs['dev'].style.width= '33%'
+        this.$refs['des'].style.height= '100%'
+        this.$refs['bis'].style.height= '100%'
+        this.$refs['dev'].style.height= '100%'
         this.$refs['dev'].style.left= '50%'
         this.$refs['dev-char'].style.width= '55%'
         this.$refs['bis-char'].style.width= '38%'
@@ -188,6 +227,71 @@ export default {
       this.$refs['des-char'].style.width= '20%'
       this.$refs['des-char'].style.left= '50%'
       this.$refs['des-text'].style.left= '50%'
+      this.expanded = true
+      this.$router.push('/designer')
+    },
+    bisExpandVer(){
+      if(!this.expanded){
+        this.$refs['ver-bis'].style.height= '50%'
+        this.$refs['ver-dev'].style.height= '25%'
+        this.$refs['ver-des'].style.height= '25%'
+        this.$refs['ver-bis'].style.width= '100%'
+        this.$refs['ver-dev'].style.width= '100%'
+        this.$refs['ver-des'].style.width= '100%'
+      }
+    },
+    devExpandVer(){
+      if(!this.expanded){
+        this.$refs['ver-bis'].style.height= '25%'
+        this.$refs['ver-dev'].style.height= '50%'
+        this.$refs['ver-des'].style.height= '25%'
+        this.$refs['ver-bis'].style.width= '100%'
+        this.$refs['ver-dev'].style.width= '100%'
+        this.$refs['ver-des'].style.width= '100%'
+      }
+    },
+    desExpandVer(){
+      if(!this.expanded){
+        this.$refs['ver-bis'].style.height= '25%'
+        this.$refs['ver-dev'].style.height= '25%'
+        this.$refs['ver-des'].style.height= '50%'
+        this.$refs['ver-bis'].style.width= '100%'
+        this.$refs['ver-dev'].style.width= '100%'
+        this.$refs['ver-des'].style.width= '100%'
+      }
+    },
+    tabsResetVer(btnClickx){
+      if (!this.expanded||btnClickx===true){
+        this.$refs['ver-bis'].style.height= '33.3%'
+        this.$refs['ver-dev'].style.height= '33.3%'
+        this.$refs['ver-des'].style.height= '33.3%'
+        this.$refs['ver-bis'].style.width= '100%'
+        this.$refs['ver-dev'].style.width= '100%'
+        this.$refs['ver-des'].style.width= '100%'
+        this.expanded = false
+      }
+      if(btnClickx){
+        this.$router.push('/')
+      }
+    },
+    devVerClick(){
+      this.$refs['ver-bis'].style.height= '0%'
+      this.$refs['ver-dev'].style.height= '100%'
+      this.$refs['ver-des'].style.height= '0%'
+      this.expanded = true
+      this.$router.push('/developer')
+    },
+    bisVerClick(){
+      this.$refs['ver-bis'].style.height= '100%'
+      this.$refs['ver-dev'].style.height= '0%'
+      this.$refs['ver-des'].style.height= '0%'
+      this.expanded = true
+      this.$router.push('/business')
+    },
+    desVerClick(){
+      this.$refs['ver-bis'].style.height= '0%'
+      this.$refs['ver-dev'].style.height= '0%'
+      this.$refs['ver-des'].style.height= '100%'
       this.expanded = true
       this.$router.push('/designer')
     },
@@ -237,7 +341,13 @@ export default {
         s1.style.top = 15 + window.pageYOffset * (window.innerWidth * 0.00007) + '%'
       }
       if(window.pageYOffset===0){
-        _this.tabsReset(true)
+        if(_this.window.width*0.8>_this.window.height){
+          _this.tabsReset(true)
+        }
+        else{
+          _this.tabsResetVer(true)
+        }
+        
       }
     }
     window.addEventListener('scroll', function () {
@@ -333,7 +443,7 @@ body{
 }
 .top-square-2{
   position: absolute;
-  background-color: #15b1d769;
+  background-color: rgba(255, 255, 255, 0.2);
   border-radius: 9%;
   transform: translate(-50%,-50%) rotateZ(55deg);
   min-width: 200px;
@@ -386,12 +496,45 @@ body{
   transition: all 0.5s ease;
   animation: slide-up 0.5s cubic-bezier(0.25,0.1,0.25,1) 0.7s forwards;
 }
+.dev-tab-ver{
+  position: relative;
+  height: 33%;
+  width: 100%;
+  overflow: hidden;
+  transition: all 0.5s ease;
+  animation: slide-up 0.5s cubic-bezier(0.25,0.1,0.25,1) 0.5s forwards;
+}
+.des-tab-ver{
+  position: relative;
+  height: 33%;
+  width: 100%;
+  overflow: hidden;
+  transition: all 0.5s ease;
+  animation: slide-up 0.5s cubic-bezier(0.25,0.1,0.25,1) 0.6s forwards;
+}
+.bis-tab-ver{
+  position: relative;
+  height: 33%;
+  width: 100%;
+  overflow: hidden;
+  transition: all 0.5s ease;
+  animation: slide-up 0.5s cubic-bezier(0.25,0.1,0.25,1) 0.7s forwards;
+}
 .char-img{
   position: absolute;
   width: 30%;
   transform: translate(-50%, -50%);
   top: 40vh;
   transition: width 0.5s ease, left 0.5s ease;
+  cursor: pointer;
+}
+.char-img-ver{
+  position: absolute;
+  height: 80%;
+  transform: translate(-50%, -50%);
+  top: 50%;
+  left: 80%;
+  transition: height 0.5s ease, left 0.5s ease;
   cursor: pointer;
 }
 .tab-top{
@@ -410,7 +553,16 @@ body{
   width: 100%;
   overflow: hidden;
   top: 5%;
-  mix-blend-mode: hard-light;
+  cursor: default;
+  transition: left 0.5s ease;
+}
+.tab-intro-ver{
+  position: absolute;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  left: 30%;
+  overflow: hidden;
+  top: 50%;
   cursor: default;
   transition: left 0.5s ease;
 }
@@ -487,7 +639,7 @@ body{
     padding: 0 10%;
 }
 .des-text{
-    font-size: 1.8vw;
+    font-size: 1.6vw;
     color: #FFFFFF88;
     padding: 0 10%;
 }

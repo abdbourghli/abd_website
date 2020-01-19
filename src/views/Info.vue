@@ -65,26 +65,26 @@ I define my skills in three categories: Business, IT, and Design. While it seems
         </div>
         <div id="feedback" class="info-title">Feedback</div>
         <br>
-        <table style="width: 45%; float:left">
+        <table v-if="!feedbackSent" style="width: 45%; float:left">
             <tr>
                 <td class="info-q">Name</td>
-                <td><input class="feedback-input" type="text" placeholder="Name or organization (optional)"></td>
+                <td><input v-model="feedbackName" class="feedback-input" type="text" placeholder="Name or organization (optional)"></td>
             </tr>
             <tr>
                 <td class="info-q">email</td>
-                <td><input class="feedback-input" type="email" placeholder="email (optional)"></td>
+                <td><input v-model="feedbackEmail" class="feedback-input" type="email" placeholder="email (optional)"></td>
             </tr>
             <tr>
                 <td class="info-q">Feedback</td>
-                <td><textarea class="feedback-input feedback-area"  placeholder="Feedback"></textarea></td>
+                <td><textarea v-model="feedbackText" class="feedback-input feedback-area"  placeholder="Feedback"></textarea></td>
             </tr>
             <tr>
-                <td></td>
-                <td><div class="submit-btn">Submit</div></td>
+                <td style="color: red;">{{feedbackErr}}</td>
+                <td><div class="submit-btn" @click="feedbackSubmit">Submit</div></td>
             </tr>
         </table>
-        <div class="feedback-a">I'm not perfect by any means and I'll take any advice I can get to better myself. If you're a potential employer or an expert or just stumbled across this website and you think that there's something I lack or I can improve then I would really appreciate it if you can take a few seconds and submit your feedback, Thank you :)</div>
-        
+        <div v-if="!feedbackSent" class="feedback-a">I'm not perfect by any means and I'll take any advice I can get to better myself. If you're a potential employer or an expert or just stumbled across this website and you think that there's something I lack or I can improve then I would really appreciate it if you can take a few seconds and submit your feedback, Thank you :)</div>
+        <div  v-if="feedbackSent">Thank you for your feedback!</div>
     </div>
 </template>
 
@@ -98,7 +98,12 @@ export default {
         return {
             titleTop: 1,
             fixed: false,
-            titleIndex: 10
+            titleIndex: 10,
+            feedbackText: '',
+            feedbackName: '',
+            feedbackEmail: '',
+            feedbackErr: '',
+            feedbackSent: false
         }
     },
     components:{
@@ -116,6 +121,26 @@ export default {
             if(this.fixed){
                 this.fixed = false
                 this.$emit('removeTitleIndex')
+            }
+        },
+        feedbackSubmit(){
+            if(this.feedbackText!=''){
+                const _this = this;
+                this.axios.post(`/feedback`, {
+                'name': _this.feedbackName,
+                'email': _this.feedbackEmail,
+                'feedback': _this.feedbackText
+                }, {withCredentials: true})
+                .then(function (response) {
+                    _this.feedbackName=response
+                })
+                .catch(function (error) {
+                    _this.feedbackName=error
+                });
+                _this.feedbackSent = true
+            }
+            else{
+                this.feedbackErr= "Feedback can't be embty!"
             }
         }
     },
@@ -138,18 +163,18 @@ export default {
     },
     watch:{
         scrollRequest(val){
-        if (val!=null){
-            this.$emit('clearScrollRequest')
-            const navEl = document.getElementById(val)
-            VueScrollTo.scrollTo(navEl, 500, {
-                easing: 'ease',
-                offset: 5,
-                force: true,
-                cancelable: true,
-                x: false,
-                y: true
-            })
-        } 
+            if (val!=null){
+                this.$emit('clearScrollRequest')
+                const navEl = document.getElementById(val)
+                VueScrollTo.scrollTo(navEl, 500, {
+                    easing: 'ease',
+                    offset: 5,
+                    force: true,
+                    cancelable: true,
+                    x: false,
+                    y: true
+                })
+            } 
         }
     }
 }

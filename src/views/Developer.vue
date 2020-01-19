@@ -32,11 +32,11 @@
         </div>
         <div class="sep"></div>
         <div class="des-conainer">
-            <div class="des-block" :style="{width: dywidth}"><iframe :style=" {width: '100%', height: '100%'}" src='src='></iframe></div>
+            <div class="des-block" :style="{width: dywidth}"><iframe :style=" {width: '100%', height: '100%'}" src='./'></iframe></div>
             <div class="des-block" :style="{width: dywidth}">
                 <div class="des-p">
                     <div class="des-title" style="color: rgb(255, 219, 45);">This Website</div>
-                    <div class="des-text">I created this website from scratch using Vue frontend framework. <br>If you are interested, you can check the source code Here.</div>
+                    <div class="des-text">I created this website from scratch using Vue frontend framework. <br>If you are interested, you can check the source code <a href="https://github.com/abdbourghli/abd_website" target="_blank">Here.</a></div>
                 </div>
             </div>
         </div>
