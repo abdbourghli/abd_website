@@ -70,6 +70,14 @@ I've been working with them since 2014 and created many videos and designs inclu
                 v-on:imgClicked="imgClicked($event)"
                 ></img-list>
             </div>
+            <div class="img-list" v-if="selectedPort===3" key="emoteList">
+                <img-list
+                v-for="imgIndex in 59"
+                :key="imgIndex"
+                :imgData="{img:`emote (${imgIndex+1}).png`, video: false}" :imgPath="'des-skills/emote/'"
+                v-on:imgClicked="imgClicked($event)"
+                ></img-list>
+            </div>
             <div class="img-list" v-if="selectedPort===4" key="veList">
                 <img-list
                 v-for="(imgData, imgIndex) in portData.portVe.list"
@@ -121,74 +129,73 @@ export default {
             ],
             portData: {
                 port3d: {path: "des-skills/3d/", list: [
-                    {img:"wkc0EYqn4js.jpg", video: true, link:'https://www.youtube.com/embed/wkc0EYqn4js'},
                     {img:"c2hm_hQHkNU.jpg", video: true, link:'https://www.youtube.com/embed/c2hm_hQHkNU'},
-                    {img:"vnMFepylABw.jpg", video: true, link:'https://www.youtube.com/embed/vnMFepylABw'},
-                    {img:"XRiRBFAWFc.jpg", video: true, link:'https://www.youtube.com/embed/XRiRBFAWFcY'},
+                    {img:"wkc0EYqn4js.jpg", video: true, link:'https://www.youtube.com/embed/wkc0EYqn4js'},
+                    {img:"3d13.jpg", video: false},
                     {img:"GwJDK85RWEI.jpg", video: true, link:'https://www.youtube.com/embed/GwJDK85RWEI'},
-                    {img:"3d1.jpg", video: false},
+                    {img:"3d4.jpg", video: false},
+                    {img:"3d6.jpg", video: false},
+                    {img:"3d10.jpg", video: false},
+                    {img:"vnMFepylABw.jpg", video: true, link:'https://www.youtube.com/embed/vnMFepylABw'},
+                    {img:"3d7.jpg", video: false},
+                    {img:"3d5.jpg", video: false},
                     {img:"3d2.jpg", video: false},
                     {img:"3d3.jpg", video: false},
-                    {img:"3d4.jpg", video: false},
-                    {img:"3d5.jpg", video: false},
-                    {img:"3d6.jpg", video: false},
-                    {img:"3d7.jpg", video: false},
+                    {img:"XRiRBFAWFc.jpg", video: true, link:'https://www.youtube.com/embed/XRiRBFAWFcY'},
+                    {img:"3d1.jpg", video: false},
                     {img:"3d8.jpg", video: false},
                     {img:"3d9.jpg", video: false},
                     {img:"3d11.jpg", video: false},
-                    {img:"3d12.jpg", video: false},
-                    {img:"3d13.jpg", video: false}
+                    {img:"3d12.jpg", video: false}
                 ]},
                 portGraphics: {path: "des-skills/graphics/", list: [
+                    {img:"graphics12.jpg", video: false},
+                    {img:"graphics18.jpg", video: false},
+                    {img:"graphics13.jpg", video: false},
                     {img:"graphics1.jpg", video: false},
                     {img:"graphics2.jpg", video: false},
-                    {img:"graphics3.jpg", video: false},
-                    {img:"graphics4.jpg", video: false},
                     {img:"graphics5.jpg", video: false},
-                    {img:"graphics6.jpg", video: false},
-                    {img:"graphics7.jpg", video: false},
-                    {img:"graphics8.jpg", video: false},
-                    {img:"graphics9.jpg", video: false},
-                    {img:"graphics10.jpg", video: false},
-                    {img:"graphics11.jpg", video: false},
-                    {img:"graphics12.jpg", video: false},
-                    {img:"graphics13.jpg", video: false},
+                    {img:"graphics3.jpg", video: false},
+                    {img:"graphics24.jpg", video: false},
+                    {img:"graphics26.jpg", video: false},
                     {img:"graphics14.jpg", video: false},
+                    {img:"graphics23.jpg", video: false},
+                    {img:"graphics9.jpg", video: false},
+                    {img:"graphics17.jpg", video: false},
+                    {img:"graphics8.jpg", video: false},
+                    {img:"graphics6.jpg", video: false},
+                    {img:"graphics4.jpg", video: false},
+                    {img:"graphics11.jpg", video: false},
+                    {img:"graphics7.jpg", video: false},
+                    {img:"graphics10.jpg", video: false},
                     {img:"graphics15.jpg", video: false},
                     {img:"graphics16.jpg", video: false},
-                    {img:"graphics17.jpg", video: false},
-                    {img:"graphics18.jpg", video: false},
                     {img:"graphics19.jpg", video: false},
                     {img:"graphics20.jpg", video: false},
                     {img:"graphics21.jpg", video: false},
                     {img:"graphics22.jpg", video: false},
-                    {img:"graphics23.jpg", video: false},
-                    {img:"graphics24.jpg", video: false},
-                    {img:"graphics25.jpg", video: false},
-                    {img:"graphics26.jpg", video: false}
+                    {img:"graphics25.jpg", video: false}
                 ]},
                 portLogo: {path: "des-skills/logo/", list: [
+                    {img:"logo11.jpg", video: false},
+                    {img:"logo16.jpg", video: false},
+                    {img:"logo12.jpg", video: false},
+                    {img:"logo9.jpg", video: false},
+                    {img:"logo14.jpg", video: false},
+                    {img:"logo17.jpg", video: false},
+                    {img:"logo13.jpg", video: false},
+                    {img:"logo6.jpg", video: false},
+                    {img:"logo7.jpg", video: false},
                     {img:"logo1.jpg", video: false},
                     {img:"logo2.jpg", video: false},
                     {img:"logo3.jpg", video: false},
                     {img:"logo4.jpg", video: false},
                     {img:"logo5.jpg", video: false},
-                    {img:"logo6.jpg", video: false},
-                    {img:"logo7.jpg", video: false},
                     {img:"logo8.jpg", video: false},
-                    {img:"logo9.jpg", video: false},
                     {img:"logo10.jpg", video: false},
-                    {img:"logo11.jpg", video: false},
-                    {img:"logo12.jpg", video: false},
-                    {img:"logo13.jpg", video: false},
-                    {img:"logo14.jpg", video: false},
-                    {img:"logo15.jpg", video: false},
-                    {img:"logo16.jpg", video: false},
-                    {img:"logo17.jpg", video: false}
+                    {img:"logo15.jpg", video: false}
                 ]},
                 portEmotes: {path: "", list:[]},
-                portVideo: {path: "", list:[]},
-                portPhotoshop: {path: "", list:[]},
                 portHajjiri: {path: "des-skills/hajjiri/", list: [
                     {img:"img1.jpg", video: false},
                     {img:"img2.jpg", video: false},
@@ -216,22 +223,22 @@ export default {
                     {img:"vid1.jpg", video: true, link: `https://www.facebook.com/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com%2FFatabyyano%2Fvideos%2F762341750621665%2F&show_text=0&width=560`}
                 ]},
                 portPs: {path: "des-skills/ps/", list: [
+                    {img:"ps13.jpg", video: false},
+                    {img:"ps8.jpg", video: false},
                     {img:"ps1.jpg", video: false},
                     {img:"ps2.jpg", video: false},
-                    {img:"ps3.jpg", video: false},
                     {img:"ps4.jpg", video: false},
-                    {img:"ps5.jpg", video: false},
-                    {img:"ps6.jpg", video: false},
-                    {img:"ps7.jpg", video: false},
-                    {img:"ps8.jpg", video: false},
                     {img:"ps9.jpg", video: false},
                     {img:"ps10.jpg", video: false},
-                    {img:"ps11.jpg", video: false},
                     {img:"ps12.jpg", video: false},
-                    {img:"ps13.jpg", video: false},
                     {img:"ps14.jpg", video: false},
-                    {img:"ps15.jpg", video: false},
-                    {img:"ps16.jpg", video: false}
+                    {img:"ps16.jpg", video: false},
+                    {img:"ps6.jpg", video: false},
+                    {img:"ps3.jpg", video: false},
+                    {img:"ps5.jpg", video: false},
+                    {img:"ps7.jpg", video: false},
+                    {img:"ps11.jpg", video: false},
+                    {img:"ps15.jpg", video: false}
                 ]},
                 portVe: {path: "des-skills/ve/", list: [
                     {img:"ve1.jpg", video: true, link: `https://www.youtube.com/embed/dyIMUI6Bmsk`},
