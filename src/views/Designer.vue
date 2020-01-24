@@ -74,6 +74,7 @@ I've been working with them since 2014 and created many videos and designs inclu
                 <img-list
                 v-for="imgIndex in 59"
                 :key="imgIndex"
+                :shrink="true"
                 :imgData="{img:`emote (${imgIndex+1}).png`, video: false}" :imgPath="'des-skills/emote/'"
                 v-on:imgClicked="imgClicked($event)"
                 ></img-list>

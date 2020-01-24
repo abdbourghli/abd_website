@@ -9,7 +9,9 @@
             <img-list
                 :imgData="imgData" :imgPath="imgPath"
                 v-on:imgClicked="imgClicked($event)"
+                :shrink="true"
                 style="margin: 5px; width: 15vw;"
+                class="img-list-scroller"
             ></img-list>
         </div>
     </div>
@@ -44,12 +46,14 @@ export default {
 #img-scroller{
     position: relative;
     width: 100%;
-    height: 17vw;
+    height: 16vw;
     overflow: hidden;
     background-color: rgba(0,0,0,0.1);
 }
 .img-slide{
     position: absolute;
+    transform: translate(-50%, -50%);
+    top: 50%;
     transition: left 1s ease;
 }
 </style>

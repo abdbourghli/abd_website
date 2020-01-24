@@ -157,6 +157,8 @@ export default {
         this.$refs['des'].style.width= '35%'
         this.$refs['dev'].style.left= '35%'
         this.$refs['dev-char'].style.width= '55%'
+        this.$refs['bis-char'].style.mixBlendMode= 'normal'
+        this.$refs['bis-char'].style.filter= 'grayscale(0)'
       }
     },
     devExpand(){
@@ -166,6 +168,8 @@ export default {
         this.$refs['des'].style.width= '40%'
         this.$refs['dev'].style.left= '50%';
         this.$refs['dev-char'].style.width=  '35%'
+        this.$refs['dev-char'].style.mixBlendMode= 'normal'
+        this.$refs['dev-char'].style.filter= 'grayscale(0)'
       }
     },
     desExpand(){
@@ -175,6 +179,8 @@ export default {
         this.$refs['dev'].style.width= '25%'
         this.$refs['dev'].style.left= '65%'
         this.$refs['dev-char'].style.width= '55%'
+        this.$refs['des-char'].style.mixBlendMode= 'normal'
+        this.$refs['des-char'].style.filter= 'grayscale(0)'
       }
     },
     tabsReset(btnClickx){
@@ -191,6 +197,12 @@ export default {
         this.$refs['des-char'].style.width= '38%'
         this.$refs['bis-char'].style.left= '66%'
         this.$refs['des-char'].style.left= '35%'
+        this.$refs['dev-char'].style.mixBlendMode= 'overlay'
+        this.$refs['dev-char'].style.filter= 'grayscale(1)'
+        this.$refs['des-char'].style.mixBlendMode= 'overlay'
+        this.$refs['des-char'].style.filter= 'grayscale(1)'
+        this.$refs['bis-char'].style.mixBlendMode= 'overlay'
+        this.$refs['bis-char'].style.filter= 'grayscale(1)'
         this.$refs['des-text'].style.left= '35%'
         this.$refs['bis-text'].style.left= '69%'
         this.expanded = false
@@ -526,7 +538,9 @@ body{
   width: 30%;
   transform: translate(-50%, -50%);
   top: 40vh;
-  transition: width 0.5s ease, left 0.5s ease;
+  filter: grayscale(1);
+  mix-blend-mode: overlay;
+  transition: all 0.5s ease;
   cursor: pointer;
 }
 .char-img-ver{
@@ -535,7 +549,9 @@ body{
   transform: translate(-50%, -50%);
   top: 50%;
   left: 80%;
-  transition: height 0.5s ease, left 0.5s ease;
+  filter: grayscale(1);
+  mix-blend-mode: overlay;
+  transition: all .5s ease;
   cursor: pointer;
 }
 .tab-top{
