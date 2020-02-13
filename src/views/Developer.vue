@@ -89,7 +89,7 @@ export default {
                 {title: "Vue", img: "dev-sw/vue.jpg", color: "rgb(255,255,255)"},
                 {title: "HTML5", img: "dev-sw/html5.jpg", color: "rgb(255,255,255)"},
                 {title: "CSS3", img: "dev-sw/css3.jpg", color: "rgb(255,255,255)"},
-                {title: "Scoket.io", img: "dev-sw/socketio.jpg", color: "rgb(255,255,255)"},
+                {title: "Socket.io", img: "dev-sw/socketio.jpg", color: "rgb(255,255,255)"},
                 {title: "CreateJS", img: "dev-sw/createjs.jpg", color: "rgb(255,255,255)"},
                 {title: "SQL Server", img: "dev-sw/sqlserver.jpg", color: "rgb(255,255,255)"},
                 {title: "MySQL", img: "dev-sw/mysql.jpg", color: "rgb(255,255,255)"}
