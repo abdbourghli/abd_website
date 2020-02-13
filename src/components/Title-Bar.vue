@@ -91,8 +91,8 @@ export default {
     position: absolute;
     left: 2vw;
     top: 2vw;
-    width: 14vh;
-    height: 14vh;
+    width: 14vw;
+    height: 14vw;
     background-color: white;
     border-radius: 50%;
     cursor: pointer;
