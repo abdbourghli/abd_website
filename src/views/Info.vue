@@ -65,7 +65,7 @@ I define my skills in three categories: Business, IT, and Design. While it seems
         </div>
         <div id="feedback" class="info-title">Feedback</div>
         <br>
-        <table v-if="!feedbackSent" style="width: 45%; float:left">
+        <table v-if="!feedbackSent" style="width: 45%; float:left; display: block;">
             <tr>
                 <td class="info-q">Name</td>
                 <td><input v-model="feedbackName" class="feedback-input" type="text" placeholder="Name or organization (optional)"></td>

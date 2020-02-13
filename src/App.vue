@@ -386,6 +386,8 @@ body{
     left: 50%;
     width: 8vw;
     height: 8vw;
+    min-width: 42px;
+    min-height: 42px;
     transform: translate(-50%, -50%) scale(1.8);
     border-radius: 50%;
     overflow: hidden;
