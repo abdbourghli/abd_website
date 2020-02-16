@@ -12,13 +12,13 @@
         <title-bar :viewport="viewport" :titleData="{text:'Projects', color:'rgb(47, 152, 208)'}"
         v-on:addTitleIndex="addTitleIndex" v-on:removeTitleIndex="removeTitleIndex" :titleOnDisplay="titleOnDisplay"></title-bar>
         <div class="des-conainer">
-            <div class="des-block" :style="{width: dywidth}"><slide-show :imgsData="extImgs"></slide-show></div>
             <div class="des-block" :style="{width: dywidth}">
                 <div class="des-p">
                     <div class="des-title" style="color: rgb(255, 219, 45);">SwiftsBot Twitch Extension</div>
                     <div class="des-text">This is a Twitch.tv extension custom made for switfor channel, it's like a dashboard that enables users to view their virtual loyalty points and ranking and provides many capabilities to utilize their points in an easy way. There is a mobile version and a video overlay version for the extension, And it's well optimized to run perfectly on different screen sizes.</div>
                 </div>
             </div>
+            <div class="des-block" :style="{width: dywidth}"><slide-show :imgsData="extImgs"></slide-show></div>
         </div>
         <div class="sep"></div>
         <div class="des-conainer">
@@ -32,13 +32,13 @@
         </div>
         <div class="sep"></div>
         <div class="des-conainer">
-            <div class="des-block" :style="{width: dywidth}"><iframe :style=" {width: '100%', height: '100%'}" src='./'></iframe></div>
             <div class="des-block" :style="{width: dywidth}">
                 <div class="des-p">
                     <div class="des-title" style="color: rgb(255, 219, 45);">This Website</div>
                     <div class="des-text">I created this website from scratch using Vue frontend framework. <br>If you are interested, you can check the source code <a href="https://github.com/abdbourghli/abd_website" target="_blank">Here.</a></div>
                 </div>
             </div>
+            <div class="des-block" :style="{width: dywidth}"><iframe :style=" {width: '100%', height: '100%'}" src='./'></iframe></div>
         </div>
         <div class="sep"></div>
         <div class="des-conainer">
@@ -52,13 +52,13 @@
         </div>
         <div class="sep"></div>
         <div class="des-conainer">
-            <div class="des-block" :style="{width: dywidth}"><iframe :style=" {width: '100%', height: '100%'}" :src="`https://www.youtube.com/embed/cI7-7YpPfOc`" frameborder="0" allowfullscreen></iframe></div>
             <div class="des-block" :style="{width: dywidth}">
                 <div class="des-p">
                     <div class="des-title" style="color: rgb(255, 219, 45);">Boss Intro Game</div>
                     <div class="des-text">This is a 2D boss fight game, it might seem like a normal game but its made to be played by thousands for players at the same time by typing commands the chat of a live stream, the purpose of the game is to replace the typical intros by entertaining audiences before the live stream starts.</div>
                 </div>
             </div>
+            <div class="des-block" :style="{width: dywidth}"><iframe :style=" {width: '100%', height: '100%'}" :src="`https://www.youtube.com/embed/cI7-7YpPfOc`" frameborder="0" allowfullscreen></iframe></div>
         </div>
         <div class="sep"></div>
         <div class="des-conainer">

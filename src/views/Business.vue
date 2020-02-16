@@ -17,7 +17,7 @@
                     <div class="des-text">In 2014 I got my  Preparatory Certificate in Management which allowed me to continue and specialize in different fields of business administration sciences.</div>
                 </div>
             </div>
-            <div class="des-block" :style="{width: dywidth}"><img class="des-img" :style="dyratio" src="../assets/hiba2.png" alt="HIBA logo"></div>
+            <div class="des-block" style="width: 90vmin; margin: 0 10vmin;" :style="{width: dywidth}"><img class="des-img" style="width:100%;" src="../assets/hiba2.png" alt="HIBA logo"></div>
         </div>
         <div class="sep"></div>
         <div class="des-conainer">

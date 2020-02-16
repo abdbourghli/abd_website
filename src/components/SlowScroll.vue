@@ -31,7 +31,7 @@ export default {
 .imgdiv{
     opacity: 1;
     height: 100%;
-    max-height: 30vw;
+    max-height: 30vmax;
     overflow: hidden;
 }
 </style>

@@ -643,7 +643,7 @@ body{
 }
 .des-block{
     width: 50%;
-    height: 30vw;
+    height: 30vmax;
     position: relative;
     overflow: hidden;
 }
@@ -654,11 +654,11 @@ body{
     text-align: left;
 }
 .des-title{
-    font-size: 3.3vw;
+    font-size: 5vmin;
     padding: 0 10%;
 }
 .des-text{
-    font-size: 1.6vw;
+    font-size: 3vmin;
     color: #FFFFFF88;
     padding: 0 10%;
 }

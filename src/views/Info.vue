@@ -65,7 +65,7 @@ I define my skills in three categories: Business, IT, and Design. While it seems
         </div>
         <div id="feedback" class="info-title">Feedback</div>
         <br>
-        <table v-if="!feedbackSent" style="width: 45%; float:left; display: block;">
+        <table v-if="!feedbackSent" style="width: 50%; float:left; display: block;">
             <tr>
                 <td class="info-q">Name</td>
                 <td><input v-model="feedbackName" class="feedback-input" type="text" placeholder="Name or organization (optional)"></td>
@@ -216,6 +216,8 @@ td{
 }
 .info-q{
     text-align: center;
+    font-size: 3vmin;
+    width: 10%;
     color: #DDDDDD;
     border-left: 0.4vw #DDDDDD solid; 
     background-color: rgba(0, 0, 0, 0.3);
@@ -238,7 +240,7 @@ a:link, a:visited{
     width: 100%;
     text-align: center;
     color: rgb(160, 160, 160);
-    font-size: 1.4vw;
+    font-size: 3vmin;
 }
 .twitter-timeline{
     display: inline-block;
@@ -262,7 +264,7 @@ input, select, textarea{
     justify-content: space-evenly;
 }
 .feedback-input{
-    width: 36vw;
+    width: 100%;
     font-size: 1vw;
     padding: 1vh 1vw;
     background-color: rgba(0, 0, 0, 0.3);
