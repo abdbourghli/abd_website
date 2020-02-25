@@ -182,7 +182,7 @@ export default {
 
 <style scoped>
 .my-custom-class{
-    max-height: 27vw;
+    max-height: 27vmax;
     overflow: auto;
     display: inline-block;
     margin: 2vh 0;

@@ -17,7 +17,7 @@
                     <div class="des-text">In 2014 I got my  Preparatory Certificate in Management which allowed me to continue and specialize in different fields of business administration sciences.</div>
                 </div>
             </div>
-            <div class="des-block" style="width: 90vmin; margin: 0 10vmin;" :style="{width: dywidth}"><img class="des-img" style="width:100%;" src="../assets/hiba2.png" alt="HIBA logo"></div>
+            <div class="des-block" style="width: 90vmin;" :style="{width: dywidth}"><img class="des-img" style="width:100%;" src="../assets/hiba2.png" alt="HIBA logo"></div>
         </div>
         <div class="sep"></div>
         <div class="des-conainer">
@@ -50,10 +50,19 @@
         </div>
         <div class="sep"></div>
         <div class="des-conainer">
-            <slow-scroll :viewport='viewport' :imgsrc="'award.jpg'" class="des-block" :style="{width: dywidth}"></slow-scroll>
             <div  class="des-block" :style="{width: dywidth}">
                 <div class="des-p">
                     <div class="des-text">In 2019 I got awarded by ARAEB for performance excellence.</div>
+                </div>
+            </div>
+            <slow-scroll :viewport='viewport' :imgsrc="'award.jpg'" class="des-block" :style="{width: dywidth}"></slow-scroll>
+        </div>
+        <div class="sep"></div>
+        <div class="des-conainer">
+            <slow-scroll :viewport='viewport' :imgsrc="'grad2.jpg'" class="des-block" :style="{width: dywidth}"></slow-scroll>
+            <div  class="des-block" :style="{width: dywidth}">
+                <div class="des-p">
+                    <div class="des-text">In February 2020 I presented and defended my Master thesis and earned my master's degree with an excellent grade.</div>
                 </div>
             </div>
         </div>

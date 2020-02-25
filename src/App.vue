@@ -55,6 +55,7 @@
           <div class="tab-cont"  @mouseenter="devExpand()" @click="devClick" style="transform: skewX(-10deg);  background-color: rgb(47, 152, 208);">
             <div class="tab-top" style="background-color: rgb(35, 114, 156);"></div>
           </div>
+          <div v-if="dev_expanded" :style="{width: window.width + 'px', height: '95%', top: '5%'}" class="snake-back"><iframe :style=" {width: '100%', height: '100%'}" style="border: none;" src='/snake'></iframe></div>
           <div ref="dev-text" class="tab-intro" style="left: 50%;">
             <div class="tab-im" style="color: rgb(22, 63, 84);" @mouseenter="devExpand()" @click="devClick">I'm a</div>
             <div class="tab-title" style="color: rgb(22, 63, 84);" @mouseenter="devExpand()" @click="devClick">Programmer</div>
@@ -132,7 +133,8 @@ export default {
         offset:0
       },
       expanded: false,
-      scrollRequest: null
+      scrollRequest: null,
+      dev_expanded: false
     }
   },
   components: {
@@ -206,6 +208,7 @@ export default {
         this.$refs['des-text'].style.left= '35%'
         this.$refs['bis-text'].style.left= '69%'
         this.expanded = false
+        this.dev_expanded = false;
       }
       if(btnClickx){
         this.$router.push('/')
@@ -218,6 +221,7 @@ export default {
       this.$refs['dev'].style.left= '50%'
       this.$refs['dev-char'].style.width= '20%'
       this.expanded = true
+      this.dev_expanded = true
       this.$router.push('/developer')
     },
     bisClick(){
@@ -290,7 +294,6 @@ export default {
       this.$refs['ver-bis'].style.height= '0%'
       this.$refs['ver-dev'].style.height= '100%'
       this.$refs['ver-des'].style.height= '0%'
-      
       this.expanded = true
       this.$router.push('/developer')
     },
@@ -725,6 +728,12 @@ body{
 .spin-fade-enter-to{
   transform: rotate(0deg);
   opacity: 1;
+}
+.snake-back{
+  position: absolute;
+  top: 0;
+  transform: translate(-50%, 0);
+  left: 50%;
 }
 @keyframes clip-sweep {
   to{
